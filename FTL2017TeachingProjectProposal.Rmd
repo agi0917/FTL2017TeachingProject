@@ -1,0 +1,65 @@
+---
+title: "FTL Teaching Project Proposal"
+author: "Peter von Rohr"
+date: "5/12/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r TableAbbrev}
+r6refobj.tababbrev <- rmddochelper::R6ClassTableAbbrev$new()
+r6refobj.tababbrev$add_abbrev(psMeaning = "Foundations of Teaching and Learning", psAbbrev = "FTL", pbOut = FALSE)
+```
+
+## Disclaimer
+This document contains the project proposal for the `r r6refobj.tababbrev$add_abbrev(psMeaning = "FTL teaching project", psAbbrev = "FTL-TP")`. The FTL-TP described here, will be implemented in the course `r r6refobj.tababbrev$add_abbrev(psMeaning = "Livestock Breeding and Genomics", psAbbrev = "LBG")` in the Fall Semester 2017.  
+
+Below the separation line a first draft version of parts of the proposal is given. Above the separation line, we start with the second version of the proposal. 
+
+
+## A Significant Issue
+Very low student participation and only minimal student activity targetted towards a better understanding of the course material consists the significant issue that has arosen during previous versions of the course LBG taught at ETH. During exercise hours students are given the opportunity to work on a prepared set of tasks about the course material presented in the previous week. Apart from very few introductory explanations, the students are asked to work either on their own or in small groups on the exercise tasks. 
+
+The expected benefit of this concept is twofold.
+
+1. Students should get a good feeling on how confident they are with the material taught in the previous week. The exercise tasks are also thought to support students in their preparation for the final exam.
+2. The lecturer gets feedback on how well the students are able to apply the course material taught during the lecture of the previous week. 
+
+Experiences with this concept made during earlier versions of LBG has shown that student participation during exercise hours is generally very low. Furthermore, student activity that is targetted towards obtaining a better understanding of the course material is at a minimal level. The low student participation and the minimal targetted student activity reduces the expected benefit of exercise hours. 
+
+
+## Background
+As a lecturer at ETH, I have a lot of freedom with respect to the design of a specific course. There are some rules and some guidelines which are based on the classification of courses into categries of pure lectures ("V"), mixed lectures and exercises ("G") and pure excersise hours ("U"). But I have never experienced a really strong enforcment of such rules. Based on my experience in teaching courses in applied statistics and computer science, I strongly believe that student learning is best supported by maximizing student participation and activity targetted towards a better understanding of the course material. This belief has a major influence in how I design courses. For more details, see the subsection on Course design further down. 
+
+### Terminology
+The terms __participation__ and __acitivity__ are very important in the proposed project FTL-TP. Therefore, these terms are defined more precisely here.
+
+### Course design
+Student activity is very important when it comes to supporting the learning process in an optimal way. Usually, it is easier to motivate students to learn when they can take an active part in the whole process of knowledge transfer. 
+
+Courses in areas of `r r6refobj.tababbrev$add_abbrev(psMeaning = "Science Technology Engineering and Mathematics", psAbbrev = "STEM")` may typically consist of the following components
+
+- __lectures__ that teach the material to students. The material is documented using slides or course notes.
+- __exercises__ are defined as a set of tasks that are solved by the students and supervised by the instructor in a reserved time slot. During that time students are given the chance to get actively involved with the material presented during the lecture
+- __homework__ which are a special form of exercises done at home by the students
+- other types of interactions such as quizzes, self-tests, exams are grouped into a special category.
+
+
+
+
+\pagebreak
+
+<!-- END of document                 -- 
+  -- Below this must not be anything -->
+
+```{r TableOfAbbreviations, results='asis'}
+r6refobj.tababbrev$writeToTsvFile()
+### # include table of abbreviations only, if there are any
+if (!r6refobj.tababbrev$is_empty_abbr())
+  r6refobj.tababbrev$include_abbr_table(psAbbrTitle = "## Abbreviations")
+
+```
+

@@ -1,0 +1,118 @@
+---
+title: "Teaching Project Selection Process"
+author: "Peter von Rohr"
+date: "2/14/2017"
+output: pdf_document
+bibliography: "FTL2017TeachingProjectSelectionProcess.bib"
+biblio-style: "apalike"
+link-citations: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r ChunkHooks, echo=FALSE, results='hide'}
+knitr::knit_hooks$set(conv.odg = rmddochelper::odg.graphics.conv.hook)
+```
+
+```{r TableAbbrev, echo=FALSE}
+r6objTableAbbrev <- rmddochelper::R6ClassTableAbbrev$new()
+```
+
+
+## Disclaimer
+This document shows the selection process of a teaching project for the course `r r6objTableAbbrev$add_abbrev(psAbbrev = "FTL2017", psMeaning = "Foundations of Teaching and Learning 2017")`. 
+
+
+## Introduction
+One part of FTL2017 consists of a teaching project. Towards the end of the course, we got the chance to select a topic for our teaching project. 
+
+
+## First Choice of a Teaching Project 
+Initially I proposed the topic `Influence of different `r r6objTableAbbrev$add_abbrev(psAbbrev = "CAT", psMeaning = "Classroom Assessment Techniques")` on student learning`. The motivation for this topic comes from the fact that in the actual version of the course `r r6objTableAbbrev$add_abbrev(psAbbrev = "ASMAS", psMeaning = "Applied Statistical Methods in Animal Science")` I am only giving written exercises during exercise hours as CAT. Because the excercises are not collected and not graded, I am not getting a lot of feedback and the quality of the assessment is rather poor. The only type of assessment I am getting is the direct interaction with the students during the excercise hours. So whenever students have questions, they would come and ask for help. During the exercise hours I can also observe their activity level which gives an indication on how well the material covered in the exercise was understood. 
+
+```{r CurrentCATSituation, conv.odg=TRUE, odg.path="../odg", odg.graph.cache=TRUE, fig.align='center', out.width='11cm', echo=FALSE, results='asis'}
+knitr::include_graphics(path = "CurrentCATSituation.pdf")
+```
+
+### Improving Current Situation
+One way of improving the overall level of assessment obtained from the students is to add more types of CATs such as 
+
+- direct questions to students
+- quizzes
+- homework and exercises that are collected and graded
+
+Using different types of CATs during the whole course is expected to strengthen the assessments of the students. Hence the above shown situation should change to the following scenario.
+
+
+```{r NewCATSituation, conv.odg=TRUE, odg.path="../odg", odg.graph.cache=TRUE, fig.align='center', out.width='11cm', echo=FALSE, results='asis'}
+knitr::include_graphics(path = "NewCATSituation.pdf")
+```
+
+### Measuring Effect of Improvement
+The improvement in feedback by the students and the stronger assessment can be measured by the following factors. 
+
+- direct observation of the student activity
+- results of the student evaluation
+- better grades in the final exam
+
+Unfortunatly, only four students plan to come to the course Applied Statistical Methods in Animal Science. That number is too small for student evaluation hence an important point in the process of measuring the effects of the proposed improvement would be missing. Secondly, the improvement in student grades in the final exam is very difficult to observe with only four students. This basically means the measureability of the improvement would be reduced to the direct observation of student activity. 
+
+Given the described restrictions with the first teaching project, we propose a second project which seams to be more suitable given the low number of students.
+
+
+## Second Choice of a Teaching Project
+The concept of `r r6objTableAbbrev$add_abbrev(psAbbrev = "TRUC", psMeaning = "Testable and Reusable Units of Cognition")` was introduced by Betrand Meyer [@Meyer2006] and Michela Pedroni [@Pedroni2009]. 
+
+
+
+\pagebreak
+
+<!-- ------------------------------------------------------------------- --
+  -- END of document:  Below this must not be anything, except the stuff --
+  -- concerning the table of abbreviations                               --> 
+  
+```{r WriteTableOfAbbreviations, echo=FALSE, results='hide'}
+if (!r6objTableAbbrev$is_empty_abbr())
+  r6objTableAbbrev$writeToTsvFile()
+```
+
+```{r AbrTableToDocument, echo=FALSE, results='asis'}
+r6objTableAbbrev$include_abbr_table()
+```
+
+
+```{r Bibliography, echo=FALSE, results='hide'}
+# Bertrand Meyer. Testable, reusable units of cognition. IEEE Computer,39(4):20–24, 2006.
+bref <- c(bibentry(
+     bibtype = "Article",
+     title = "Testable, reusable units of cognition",
+     author = as.person("Bertrand Meyer [aut]"),
+     year = "2006",
+     journal = "IEEE Computer",
+     number = "39(4)",
+     pages = "20-24",
+     key = "Meyer2006"),
+  bibentry(
+    bibtype = "PhdThesis",
+    title = "Concepts and Tools for Teaching Programming",
+    author = as.person("Michela Pedroni [aut]"),
+    year = "2009",
+    school = "ETH Zurich",
+    number = "18671",
+    key = "Pedroni2009"
+  )     
+)
+
+sRmdSrc <- list.files(path = ".", pattern = "Rmd")
+sBibFile <- paste(tools::file_path_sans_ext(sRmdSrc), "bib", sep = ".")
+
+if(!file.exists(sBibFile))
+  cat(toBibtex(bref), "\n", file = sBibFile)
+```
+
+\pagebreak
+
+# References {-}
+
