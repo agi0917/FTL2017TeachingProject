@@ -1,0 +1,175 @@
+---
+output:
+  pdf_document:
+    includes:
+      in_header: ../tex/header.tex
+    fig_caption: false
+documentclass: article
+bibliography: ["FTL2017TeachingProjectProposal.bib"]
+biblio-style: apalike
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r TableAbbrev}
+r6refobj.tababbrev <- rmddochelper::R6ClassTableAbbrev$new()
+r6refobj.tababbrev$add_abbrev(psMeaning = "Foundations of Teaching and Learning", psAbbrev = "FTL", pbOut = FALSE)
+```
+
+![ETH Logo](../png/ETH-logo.png)
+
+\fcolorbox{red}{white}{
+	\parbox[t]{1.0\linewidth}{
+		\centering \fontsize{12pt}{20pt}\selectfont % 
+		\vspace*{0.5cm} % 
+
+		\hfill Project Proposal
+
+		\vspace*{0.5cm} 
+	}
+}
+
+\vspace*{2cm}
+
+```{r r4stemLogo, out.width="16cm", fig.align='right'}
+knitr::include_graphics(path = "../png/r4tstem-logo")
+```
+
+\vspace{10ex}
+{\centering \small
+\hfill
+\begin{tabular}{l}
+Peter von Rohr                      \\
+D-USYS  ETHZ                        \\
+Institute of Agricultural Science   \\
+\verb+peter.vonrohr@usys.ethz.ch+  
+\end{tabular}
+}
+
+\vspace{10ex}
+{\small Lehrentwicklung und -technologie, www.let.ethz.ch}
+
+\pagebreak
+
+## Disclaimer
+This document contains the project proposal for the `r r6refobj.tababbrev$add_abbrev(psMeaning = "FTL teaching project", psAbbrev = "FTL-TP")` entitled "R/Rstudio 4 Teaching In STEM". R is a programming language and a software system that has become very popular in the area of statistics. RStudio is an `r r6refobj.tababbrev$add_abbrev(psMeaning = "Integrated Development Environment", psAbbrev = "IDE")` for R. Both R and RStudio are open source projects and allow for extending the base systems of R and RStudio very easily and very flexibly. 
+
+The FTL-TP described here, will be implemented in the course `r r6refobj.tababbrev$add_abbrev(psMeaning = "Livestock Breeding and Genomics", psAbbrev = "LBG")` in the Fall Semester 2017 at ETH Zurich.  
+
+This proposal starts with a short description of the significant issue that has lead to this project. The sections on the background and on course design give more information on why this signigicant issue has arosen and motivate the specific course design decision for the LBG course. Based on the background and on the course design, a solution for the significant issue is proposed.
+
+
+## A Significant Issue
+Very low student __participation__ and only minimal student __activity__ targetted towards a better understanding of the course material consists the __significant issue__ that has arosen during previous versions of the course LBG taught at ETH. During exercise hours students are given the opportunity to work on a prepared set of tasks about the course material presented in the lecture of the previous week. Apart from very few introductory explanations, students are asked to work either on their own or in small groups on the exercise tasks. 
+
+The expected benefit of this concept is twofold.
+
+1. Students should get a good feeling on how confident they are with the material taught in the previous week. The exercise tasks are also thought to support students in their preparation for the final exam.
+2. The lecturer gets feedback on how well the students are able to apply the course material taught during the lecture of the previous week. This feedback helps the lecturer to identify weeknesses in the course material or in its presentation.
+
+Experiences with this concept made during earlier versions of the LBG course have shown that student participation during exercise hours is generally very low. Furthermore, student activity that is targetted towards obtaining a better understanding of the course material is at a minimal level. The low student participation and the minimal targetted student activity reduces the expected benefits of the described concept using exercise hours. 
+
+
+## Background
+As a lecturer at ETH, I have a lot of freedom with respect to the design of a specific course. There are some rules and some guidelines which are based on the classification of courses into the following categries.
+
+- pure lectures ("V"), 
+- mixed lectures and exercises ("G") and 
+- pure excersise hours ("U"). 
+
+But I have never experienced a really strong enforcment of such rules. Based on my experience in teaching courses in applied statistics and computer science, I strongly believe that student learning is best supported by encouraging student participation and by maximizing student activity targetted towards a better understanding of the course material. This belief has a major influence in how I design courses. For more details, see the subsection on Course design further down. 
+
+### Terminology
+The terms student __participation__ and student __acitivity__ are very important in the context of the proposed project FTL-TP. Therefore, a precise definition of these terms is given in this subsection. 
+
+- __participation__: means that student engage during the interactive parts of a course
+- __activity__: stands for activities of students that are targetted towards learning and understanding the course material. It is to be distinguished from a general form of activity which is not supportive for the process of understanding an learning the course material.
+
+
+## Course design
+Student activity is very important when it comes to supporting the learning process in an optimal way. Usually, it is easier to motivate students to learn when they can take an active part in the whole process of knowledge transfer. 
+
+Courses in areas of `r r6refobj.tababbrev$add_abbrev(psMeaning = "Science Technology Engineering and Mathematics", psAbbrev = "STEM")` may typically consist of the following components
+
+- __lectures__ that teach the material to students. The material is documented using slides or course notes.
+- __exercises__ are defined as a set of tasks that are solved by the students and supervised by the instructor in a reserved time slot. During that time students are given the chance to get actively involved with the material presented during the lecture of the previous week
+- __homework__ which are a special form of exercises done at home by the students
+- other types of interactions such as quizzes, self-tests, exams are grouped into a special category.
+
+When looking at the process of knowledge transfer from an abstract point of view, the lecture marks usually the first encounter of the students with the new material. It might not seam so obvious, but also during the lecture student participation and targetted activity can be promoted by using appropriate teaching techniques. Once the students got in contact with the new material, it is important to give them the chance to apply the newly presented knowledge. One way of such an application is to present them exercises in the sense as it is defined above as a series of tasks where students can apply the previously taught lecture material. This concept of alternating lecture hours and exercise sessions has several benefits. 
+
+- students are encouraged to participate during the lecture in order to be able to work on the exercise tasks
+- during exercise hours, students are asked to take an active part and thereby targetted student activity is increased
+- students can directly test whether they have understood the lecture material
+- the lecturer gets feedback from the students either directly when students are asking questions or indirectly by observing how the students are solving the exercise tasks.
+
+
+## Exercises And A Potential Improvement
+Exercises are very important when it comes to motivating the students to participate during the whole course. The level of targetted student activity can also be increased with good exercises that aim at reinforcing the material taught during the lectures. The benefits of a course design that combines lectures and exercises are described in the previous section. These benefits can even be improved when students solve the exercise tasks directly during the reserved time slot for the exercises (also called exercise hour) and at the end turn their solutions in for correction. The __improvement__ comes with the fact that when exercise task solutions are turned in for corrections, both the students and the lecturer get a permanent record of how good students were able to apply the taught material for a given set of exercise tasks. This record is very important for the students that are trying to improve their knowlegde in the process of ultimately becoming experts in their fields. But also for the lecturer who is interested in improving the whole course, possible mistakes and missunderstandings of the concepts that were required for solving the tasks must be identified and monitored. Especially when teaching courses in applied statistics, faulty reasoning and missunderstandings of concepts seams to be quite an important issue as was reported in the review by [@ZGAD2008].
+
+In previous versions of the LBG lecture, the policy of students having to turn in exercise task solutions for corrections was neither systematically implemented nor strongly enforced. Due to the lack of that enforcement, combined together with the low level of student participation and the minimal targetted student activity during exercise hours, the expected additional benefit due to the permanent record from the turned-in exercise solution was not realized. As already mentioned at the beginning of this document, this consists of the significant issue which motivates this project.
+
+### Possible reasons for the occurance of the significant issue
+Most exercise tasks require a statistical software system such as R in a reasonably new version installed on a computer by the students. This requirement seamed to have been too demanding with the consequence that a sizable part of the students did not fullfill the technical requirements for completing the exercise tasks.
+
+
+## Proposed Solution
+The technical burden of installing additional software can be taken away from students by installing the required software systems on a remotely accessible server. The server together with installed software constitutes an online platform available for students to be used for solving their exercise tasks. Students will get accounts on the server which gives them a separated users-space for manipulating and storing files and it allows them to use the tools available on the online platform. 
+
+During the first exercise hour, students are not required to install a statistical software package, but they get instructions on how to access and how to use the online platform. As soon as students have access to the online platform, they are asked to solve all exercise tasks on the online platform.
+
+### Planned process of an exercise session
+Prior to an exercise hour the exercise tasks are prepared by the lecturer and stored in a document. This document is copied into each of the student user-spaces on the online platform. During the exercise hours students are asked to work on the exercise tasks by directly writing their solutions to the tasks into the document that was copied into their user-space. Once they have completed the solution to the exercise tasks, the lecturer can copy back their solutions into a separately prepared folder on the server for correcting the students solution to the exercise tasks. 
+
+This process of letting the students enter their solutions to the exercise tasks directly on the platform and after that copying the solutions for correction leads to the permanent record of student solutions. This permanent record of student solutions is the central part to observe the additional benefit in terms of improved student feedback.  
+
+### Technical aspects
+Nowadays many computing platforms such as "Amazon Web Service", "Google Compute Enging", "Windows Azure", "Digital Ocean", "Hetzer", and many more exist. Most of them provide services that allows the rent of a dedicated compute server. Once, a compute server is rented, the necessary tools like R and RStudio server are installed and configured. After the installation and configuration of our toolset, the basic version of the online platform is ready to be used.  
+
+\pagebreak
+
+<!-- ------------------------------------ --
+  -- END of document                      -- 
+  -- Below this must not be anything      --
+  -- except for the table of abbreviation --
+  -- and bibliography                     --
+  -- ------------------------------------ -->
+
+```{r TableOfAbbreviations, results='asis'}
+r6refobj.tababbrev$writeToTsvFile()
+### # include table of abbreviations only, if there are any
+if (!r6refobj.tababbrev$is_empty_abbr())
+  r6refobj.tababbrev$include_abbr_table(psAbbrTitle = "## Abbreviations")
+
+```
+
+\pagebreak
+
+```{r Bibliography, echo=FALSE, results='hide'}
+bref <- c(bibentry(
+     bibtype = "Article",
+     title = "What Does Research Suggest About the Teaching and Learning of Introductory Statistics at the College Level? A Review of the Literature",
+     author = c(as.person("Andrew Zieffler [aut]"), 
+                as.person("Joan Garfield [aut]]"),
+                as.person("Shirley Alt [aut]"),
+                as.person("Danielle Dupuis [aut]"),
+                as.person("Kristine Holleque [aut]"),
+                as.person("Beng Chang [aut]")),
+     year = "2008",
+     journal = "Journal of Statistics Education",
+     number = "16",
+     pages = "1-21",
+     url = "ww2.amstat.org/publications/jse/v16n2/zieffler.html",
+     key = "ZGAD2008"))
+
+
+### # Fixed assignmen of bib file
+sBibFile <- "FTL2017TeachingProjectProposal.bib"
+if(!file.exists(sBibFile))
+  cat(paste(toBibtex(bref), collapse = "\n"), "\n", file = sBibFile)
+```
+
+## References

@@ -35,7 +35,10 @@ Experiences with this concept made during earlier versions of LBG has shown that
 As a lecturer at ETH, I have a lot of freedom with respect to the design of a specific course. There are some rules and some guidelines which are based on the classification of courses into categries of pure lectures ("V"), mixed lectures and exercises ("G") and pure excersise hours ("U"). But I have never experienced a really strong enforcment of such rules. Based on my experience in teaching courses in applied statistics and computer science, I strongly believe that student learning is best supported by maximizing student participation and activity targetted towards a better understanding of the course material. This belief has a major influence in how I design courses. For more details, see the subsection on Course design further down. 
 
 ### Terminology
-The terms __participation__ and __acitivity__ are very important in the proposed project FTL-TP. Therefore, these terms are defined more precisely here.
+The terms student __participation__ and student __acitivity__ are very important in the context of the proposed project FTL-TP. Therefore, a precise definition of these terms is given in this subsection. 
+
+- __participation__: 
+- __activity__:
 
 ### Course design
 Student activity is very important when it comes to supporting the learning process in an optimal way. Usually, it is easier to motivate students to learn when they can take an active part in the whole process of knowledge transfer. 
